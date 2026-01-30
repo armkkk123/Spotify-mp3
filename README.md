@@ -116,11 +116,9 @@ INFO: ✅ ดาวน์โหลด MP3 สำเร็จ
 ## 🏗️ Project Structure
 
 ```
-youtube-downloader-pro/
-├── youtube_downloader_pro.py   # Main application
+Dowload-Mp3-MP4-fast/
+├── Dowload-Mp3-MP4-fast.py     # Main application
 ├── requirements.txt            # Python dependencies
-├── README.md                   # Documentation
-├── config.json                 # User configuration (auto-generated)
 ├── download.log                # Download logs
 ├── downloads/                  # Downloaded files
 ├── yt-dlp.exe                  # yt-dlp binary
@@ -138,35 +136,13 @@ youtube-downloader-pro/
 
 ### Class Structure
 ```
-DownloaderApp (Main Controller)
-├── Config (Configuration)
-├── Logger (Logging System)
-├── DependencyChecker (Validation)
-├── Downloader (Core Logic)
-│   ├── download_audio()
-│   ├── download_video()
-│   └── _execute_download()
-├── QualitySettings (Presets)
-└── UI (User Interface)
 ```
 
-## 🔧 Configuration
-
-### Default Settings
-```python
-MAX_RETRIES = 3          # จำนวนครั้งที่ลองใหม่
-TIMEOUT = 300            # Timeout (วินาที)
+```
 ```
 
-### Custom Configuration
-สร้างไฟล์ `config.json`:
-```json
-{
-  "max_retries": 5,
-  "timeout": 600,
-  "default_audio_quality": "1",
-  "default_video_quality": "2"
-}
+
+```
 ```
 
 ## 📊 Logging
@@ -194,13 +170,13 @@ output_template = "%(artist)s - %(title)s.%(ext)s"
 output_template = "%(title)s - %(upload_date)s.%(ext)s"
 ```
 
-### Download Playlist
-ปิด `--no-playlist` ใน `_build_base_command()`:
+### Download Playlis
+ปิด `--no-playlis` ใน `_build_base_command()`:
 ```python
-def _build_base_command(self) -> list:
+def _build_base_command(self) -> lis:
     return [
         str(self.config.YTDLP),
-        # "--no-playlist",  # Comment this line
+        # "--no-playlis",  # Comment this line
         ...
     ]
 ```
